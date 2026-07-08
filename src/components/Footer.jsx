@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom'
-
 export default function Footer() {
   return (
     <footer className="footer">
@@ -12,9 +10,6 @@ export default function Footer() {
           </div>
         </div>
         <nav className="footer__links">
-          <Link to="/">Inicio</Link>
-          <Link to="/libro">Libro</Link>
-          <Link to="/actividades">Actividades</Link>
         </nav>
         <p className="footer__note">
           Proyecto educativo · Maqueta con datos internos (sin base de datos).

@@ -1,7 +1,8 @@
 import { useMemo, useState } from 'react'
 import { sonIguales } from '../../utils/texto.js'
+import { useReportarCompletado } from '../../utils/actividadCallback.js'
 
-export default function Completar({ actividad }) {
+export default function Completar({ actividad, onCompletar }) {
   const banco = useMemo(() => mezclar(actividad.banco), [actividad.banco])
   const [respuestas, setRespuestas] = useState(() => actividad.frases.map(() => null))
   const [seleccionada, setSeleccionada] = useState(null) // índice del hueco activo
@@ -47,6 +48,12 @@ export default function Completar({ actividad }) {
 
   const todasLlenas = respuestas.every(Boolean)
   const aciertos = respuestas.filter((r, i) => r && sonIguales(r, actividad.frases[i].respuesta)).length
+
+  useReportarCompletado(
+    comprobado,
+    { aciertos, total: actividad.frases.length, porcentaje: Math.round((aciertos / actividad.frases.length) * 100) },
+    onCompletar
+  )
 
   return (
     <div className="completar">

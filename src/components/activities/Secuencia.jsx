@@ -1,8 +1,9 @@
 import { useMemo, useState } from 'react'
+import { useReportarCompletado } from '../../utils/actividadCallback.js'
 
 // Ordena la secuencia: se muestran los pasos desordenados y el
 // estudiante los sube o baja hasta dejarlos en el orden correcto.
-export default function Secuencia({ actividad }) {
+export default function Secuencia({ actividad, onCompletar }) {
   const inicial = useMemo(() => desordenar(actividad.pasos), [actividad.pasos])
   const [orden, setOrden] = useState(inicial)
   const [comprobado, setComprobado] = useState(false)
@@ -26,6 +27,12 @@ export default function Secuencia({ actividad }) {
 
   const aciertos = orden.filter((p, i) => p.correcto === i).length
   const todoBien = aciertos === orden.length
+
+  useReportarCompletado(
+    comprobado,
+    { aciertos, total: orden.length, porcentaje: Math.round((aciertos / orden.length) * 100) },
+    onCompletar
+  )
 
   return (
     <div className="secuencia">

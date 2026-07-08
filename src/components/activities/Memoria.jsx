@@ -1,9 +1,10 @@
 import { useMemo, useState } from 'react'
+import { useReportarCompletado } from '../../utils/actividadCallback.js'
 
 // Memorama: se muestran cartas boca abajo. Al voltear dos, si
 // pertenecen a la misma pareja (término + descripción) se quedan
 // destapadas. Gana cuando encuentra todas las parejas.
-export default function Memoria({ actividad }) {
+export default function Memoria({ actividad, onCompletar }) {
   const cartasIniciales = useMemo(() => crearCartas(actividad.pares), [actividad.pares])
   const [cartas, setCartas] = useState(cartasIniciales)
   const [volteadas, setVolteadas] = useState([]) // índices volteados temporalmente
@@ -36,6 +37,12 @@ export default function Memoria({ actividad }) {
   }
 
   const gano = encontradas.length === actividad.pares.length
+
+  useReportarCompletado(
+    gano,
+    { porcentaje: 100, intentos, detalle: `Parejas en ${intentos} intentos` },
+    onCompletar
+  )
 
   const reiniciar = () => {
     setCartas(crearCartas(actividad.pares))

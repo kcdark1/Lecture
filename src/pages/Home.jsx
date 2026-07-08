@@ -8,23 +8,21 @@ export default function Home() {
 
   return (
     <div className="home">
-      {/* HERO */}
       <section className="hero">
         <div className="hero__blob hero__blob--1" />
         <div className="hero__blob hero__blob--2" />
         <div className="hero__content">
-          <span className="hero__eyebrow">🌿 Aprende biología jugando</span>
+          <span className="hero__eyebrow">🎓 Curso online de Biología</span>
           <h1 className="hero__title">
-            Explora la vida con <span className="hero__highlight">BioAventura</span>
+            Aprende con <span className="hero__highlight">BioAventura</span>
           </h1>
           <p className="hero__subtitle">
-            Un libro digital interactivo con {temas.length} capítulos de biología, {temas.length * 5} páginas de
-            lectura, imágenes, datos curiosos y {actividades.length} actividades para poner a prueba
-            lo que aprendes.
+            Un curso estilo Udemy con {temas.length} capítulos, lecturas, videos,
+            {actividades.length} actividades y diploma al terminar. Todo en una sola pantalla,
+            sin cambiar de pestaña.
           </p>
           <div className="hero__actions">
-            <Link to="/libro" className="btn btn--primary btn--lg">📖 Abrir el libro</Link>
-            <Link to="/actividades" className="btn btn--ghost btn--lg">🎮 Ir a las actividades</Link>
+            <Link to="/curso" className="btn btn--primary btn--lg">🚀 Entrar al curso</Link>
           </div>
           <div className="hero__stats">
             <div className="hero__stat">
@@ -32,16 +30,16 @@ export default function Home() {
               <span>Capítulos</span>
             </div>
             <div className="hero__stat">
-              <strong>30</strong>
-              <span>Páginas</span>
+              <strong>60</strong>
+              <span>Lecciones</span>
             </div>
             <div className="hero__stat">
               <strong>{actividades.length}</strong>
               <span>Actividades</span>
             </div>
             <div className="hero__stat">
-              <strong>10</strong>
-              <span>Tipos de juego</span>
+              <strong>🎓</strong>
+              <span>Diploma</span>
             </div>
           </div>
         </div>
@@ -54,33 +52,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CÓMO FUNCIONA */}
       <section className="section">
         <h2 className="section__title">¿Cómo funciona?</h2>
         <div className="pasos">
           <div className="paso">
             <span className="paso__num">1</span>
-            <h3>📖 Lee</h3>
-            <p>Explora los capítulos del libro con imágenes, vocabulario y datos curiosos.</p>
+            <h3>📖 Lee y mira</h3>
+            <p>Alterna lecturas y videos educativos en el orden del curso, como en Udemy.</p>
           </div>
           <div className="paso">
             <span className="paso__num">2</span>
-            <h3>🎮 Juega</h3>
-            <p>Pon a prueba lo aprendido con 10 juegos: ahorcado, quiz, memorama, sopa de letras, anagramas ¡y más!</p>
+            <h3>🎮 Practica</h3>
+            <p>Realiza actividades interactivas. Tus respuestas y puntajes se guardan en caché.</p>
           </div>
           <div className="paso">
             <span className="paso__num">3</span>
-            <h3>🏆 Aprende</h3>
-            <p>Recibe respuestas al instante y repite las actividades cuantas veces quieras.</p>
+            <h3>🎓 Certifícate</h3>
+            <p>Al completar todo el curso recibes tu diploma con tu nombre y apellido.</p>
           </div>
         </div>
       </section>
 
-      {/* TEMAS DESTACADOS */}
       <section className="section">
         <div className="section__head">
-          <h2 className="section__title">Capítulos del libro</h2>
-          <Link to="/libro" className="section__link">Ver los {temas.length} capítulos →</Link>
+          <h2 className="section__title">Capítulos del curso</h2>
+          <Link to="/curso" className="section__link">Ir al curso →</Link>
         </div>
         <div className="grid grid--cards">
           {destacados.map((tema) => (
@@ -89,11 +85,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA FINAL */}
       <section className="cta">
-        <h2>¿List@ para tu aventura por la biología?</h2>
-        <p>Comienza a leer y demuestra lo que sabes con nuestras {actividades.length} actividades.</p>
-        <Link to="/libro" className="btn btn--primary btn--lg">Comenzar ahora 🚀</Link>
+        <h2>¿List@ para empezar?</h2>
+        <p>Regístrate con tu nombre, avanza lección por lección y obtén tu diploma.</p>
+        <Link to="/curso" className="btn btn--primary btn--lg">Comenzar el curso 🚀</Link>
       </section>
     </div>
   )

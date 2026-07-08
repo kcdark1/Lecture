@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom'
+import { primerPasoId } from '../data/curso.js'
 
 export default function NotFound() {
   return (
     <div className="notfound">
       <span className="notfound__emoji">🔍🦠</span>
       <h1>¡Ups! Página no encontrada</h1>
-      <p>Parece que este ser vivo se escapó. Volvamos a un lugar seguro.</p>
+      <p>Parece que este ser vivo se escapó. Volvamos al curso.</p>
       <div className="notfound__actions">
-        <Link to="/" className="btn btn--primary">Ir al inicio</Link>
-        <Link to="/libro" className="btn btn--ghost">Ver el libro</Link>
+        <Link to={`/curso/${primerPasoId}`} className="btn btn--primary">Ir al curso</Link>
       </div>
     </div>
   )

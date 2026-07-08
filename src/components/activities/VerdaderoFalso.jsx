@@ -1,6 +1,7 @@
 import { useState } from 'react'
+import { useReportarCompletado } from '../../utils/actividadCallback.js'
 
-export default function VerdaderoFalso({ actividad }) {
+export default function VerdaderoFalso({ actividad, onCompletar }) {
   const total = actividad.afirmaciones.length
   const [respuestas, setRespuestas] = useState(() => actividad.afirmaciones.map(() => null))
   const [comprobado, setComprobado] = useState(false)
@@ -22,6 +23,12 @@ export default function VerdaderoFalso({ actividad }) {
     setRespuestas(actividad.afirmaciones.map(() => null))
     setComprobado(false)
   }
+
+  useReportarCompletado(
+    comprobado,
+    { aciertos, total, porcentaje: Math.round((aciertos / total) * 100) },
+    onCompletar
+  )
 
   return (
     <div className="vf">

@@ -1,10 +1,11 @@
 import { useMemo, useState } from 'react'
 import { normalizar } from '../../utils/texto.js'
+import { useReportarCompletado } from '../../utils/actividadCallback.js'
 
 // Sopa de letras: se genera una cuadrícula con las palabras
 // escondidas. El estudiante hace clic en la primera y la última
 // letra de una palabra para marcarla.
-export default function SopaLetras({ actividad }) {
+export default function SopaLetras({ actividad, onCompletar }) {
   const [seed, setSeed] = useState(0)
   const palabrasLimpias = useMemo(
     () => actividad.palabras.map((p) => normalizar(p).replace(/[^A-ZÑ]/g, '')),
@@ -46,6 +47,12 @@ export default function SopaLetras({ actividad }) {
   }, [encontradas, colocadas])
 
   const gano = encontradas.length === colocadas.length
+
+  useReportarCompletado(
+    gano,
+    { aciertos: encontradas.length, total: colocadas.length, porcentaje: Math.round((encontradas.length / colocadas.length) * 100) },
+    onCompletar
+  )
 
   const reiniciar = () => {
     setEncontradas([])

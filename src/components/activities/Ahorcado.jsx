@@ -1,10 +1,11 @@
 import { useMemo, useState } from 'react'
 import { normalizar } from '../../utils/texto.js'
+import { useReportarCompletado } from '../../utils/actividadCallback.js'
 
 const ALFABETO = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ'.split('')
 const MAX_ERRORES = 6
 
-export default function Ahorcado({ actividad }) {
+export default function Ahorcado({ actividad, onCompletar }) {
   const palabra = useMemo(() => normalizar(actividad.palabra), [actividad.palabra])
   const [usadas, setUsadas] = useState([])
 
@@ -17,6 +18,12 @@ export default function Ahorcado({ actividad }) {
   const perdio = errores.length >= MAX_ERRORES
   const gano = letrasUnicas.every((l) => usadas.includes(l))
   const terminado = perdio || gano
+
+  useReportarCompletado(
+    terminado,
+    { gano, porcentaje: gano ? 100 : 0, detalle: gano ? 'Adivinó la palabra' : 'Sin completar' },
+    onCompletar
+  )
 
   const intentar = (letra) => {
     if (terminado || usadas.includes(letra)) return

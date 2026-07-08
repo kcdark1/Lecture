@@ -1,9 +1,10 @@
 import { useMemo, useState } from 'react'
 import { sonIguales } from '../../utils/texto.js'
+import { useReportarCompletado } from '../../utils/actividadCallback.js'
 
 // Ordena la palabra (anagrama): las letras aparecen desordenadas y
 // el estudiante las va colocando en orden con ayuda de la pista.
-export default function Anagrama({ actividad }) {
+export default function Anagrama({ actividad, onCompletar }) {
   const total = actividad.palabras.length
   const [indice, setIndice] = useState(0)
   const [colocadas, setColocadas] = useState([]) // fichas elegidas, en orden
@@ -49,6 +50,12 @@ export default function Anagrama({ actividad }) {
     setAciertos(0)
     setTerminado(false)
   }
+
+  useReportarCompletado(
+    terminado,
+    { aciertos, total, porcentaje: Math.round((aciertos / total) * 100) },
+    onCompletar
+  )
 
   if (terminado) {
     const perfecto = aciertos === total

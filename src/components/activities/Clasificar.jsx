@@ -1,7 +1,8 @@
 import { useMemo, useState } from 'react'
+import { useReportarCompletado } from '../../utils/actividadCallback.js'
 
 // Clasifica: cada elemento debe asignarse a su categoría correcta.
-export default function Clasificar({ actividad }) {
+export default function Clasificar({ actividad, onCompletar }) {
   const items = useMemo(() => mezclar(actividad.items), [actividad.items])
   const [asignado, setAsignado] = useState(() => items.map(() => null))
   const [comprobado, setComprobado] = useState(false)
@@ -23,6 +24,12 @@ export default function Clasificar({ actividad }) {
     setAsignado(items.map(() => null))
     setComprobado(false)
   }
+
+  useReportarCompletado(
+    comprobado,
+    { aciertos, total: items.length, porcentaje: Math.round((aciertos / items.length) * 100) },
+    onCompletar
+  )
 
   return (
     <div className="clasificar">

@@ -1,8 +1,9 @@
 import { useMemo, useState } from 'react'
+import { useReportarCompletado } from '../../utils/actividadCallback.js'
 
 // Relaciona: dos columnas. El estudiante toca un término y luego su
 // definición para unirlos. Si acierta, la pareja queda fijada.
-export default function Relacionar({ actividad }) {
+export default function Relacionar({ actividad, onCompletar }) {
   const [seed, setSeed] = useState(0)
   const definiciones = useMemo(
     () => mezclar(actividad.pares.map((p, i) => ({ texto: p.definicion, par: i }))),
@@ -33,6 +34,12 @@ export default function Relacionar({ actividad }) {
   }
 
   const gano = emparejados.length === actividad.pares.length
+
+  useReportarCompletado(
+    gano,
+    { porcentaje: 100, intentos, detalle: `Parejas en ${intentos} intentos` },
+    onCompletar
+  )
 
   const reiniciar = () => {
     setSeleccion(null)

@@ -1,6 +1,7 @@
 import { useState } from 'react'
+import { useReportarCompletado } from '../../utils/actividadCallback.js'
 
-export default function Quiz({ actividad }) {
+export default function Quiz({ actividad, onCompletar }) {
   const total = actividad.preguntas.length
   const [actual, setActual] = useState(0)
   const [elegida, setElegida] = useState(null)
@@ -30,6 +31,12 @@ export default function Quiz({ actividad }) {
     setAciertos(0)
     setTerminado(false)
   }
+
+  useReportarCompletado(
+    terminado,
+    { aciertos, total, porcentaje: Math.round((aciertos / total) * 100) },
+    onCompletar
+  )
 
   if (terminado) {
     const perfecto = aciertos === total

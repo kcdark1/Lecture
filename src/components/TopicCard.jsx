@@ -1,12 +1,15 @@
 import { Link } from 'react-router-dom'
 import { totalPaginas } from '../data/temas.js'
+import { capitulosCurso } from '../data/curso.js'
 import SmartImage from './SmartImage.jsx'
 
 export default function TopicCard({ tema }) {
   const paginas = totalPaginas(tema.id)
+  const cap = capitulosCurso.find((c) => c.temaId === tema.id)
+  const primerPaso = cap?.pasos[0]?.id
 
   return (
-    <Link to={`/libro/${tema.id}`} className="topic-card" style={{ '--accent': tema.color }}>
+    <Link to={primerPaso ? `/curso/${primerPaso}` : '/curso'} className="topic-card" style={{ '--accent': tema.color }}>
       <div className="topic-card__media">
         <SmartImage
           src={tema.imagen}
@@ -24,7 +27,7 @@ export default function TopicCard({ tema }) {
         </h3>
         <p className="topic-card__subtitle">{tema.subtitulo}</p>
         <p className="topic-card__resumen">{tema.resumen}</p>
-        <span className="topic-card__link">Leer capítulo →</span>
+        <span className="topic-card__link">Ir al capítulo →</span>
       </div>
     </Link>
   )
