@@ -1,4 +1,5 @@
 import { useCourse } from '../../context/CourseContext.jsx'
+import { temas, UNIDAD, NIVEL } from '../../data/temas.js'
 
 export default function DiplomaModal() {
   const { mostrarDiploma, setMostrarDiploma, usuario } = useCourse()
@@ -23,8 +24,9 @@ export default function DiplomaModal() {
             <p className="diploma__otorga">BioAventura certifica que</p>
             <h2 className="diploma__nombre">{nombre}</h2>
             <p className="diploma__texto">
-              ha completado satisfactoriamente el curso de <strong>Biología</strong>,
-              con 6 capítulos, lecturas, videos y actividades interactivas.
+              ha completado satisfactoriamente la unidad <strong>{UNIDAD}</strong> de{' '}
+              <strong>Biología ({NIVEL})</strong>, con {temas.length} temas, lecturas,
+              videos y actividades interactivas.
             </p>
             <p className="diploma__fecha">{fecha}</p>
             <div className="diploma__firma">

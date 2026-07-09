@@ -18,7 +18,7 @@ export default function TopicCard({ tema }) {
           color={tema.color}
           ratio="16 / 10"
         />
-        <span className="topic-card__badge">Capítulo {tema.numero} · {paginas} págs.</span>
+        <span className="topic-card__badge">Tema {tema.numero} · {paginas} págs.</span>
       </div>
       <div className="topic-card__body">
         <h3 className="topic-card__title">
@@ -27,7 +27,7 @@ export default function TopicCard({ tema }) {
         </h3>
         <p className="topic-card__subtitle">{tema.subtitulo}</p>
         <p className="topic-card__resumen">{tema.resumen}</p>
-        <span className="topic-card__link">Ir al capítulo →</span>
+        <span className="topic-card__link">Ir al tema →</span>
       </div>
     </Link>
   )

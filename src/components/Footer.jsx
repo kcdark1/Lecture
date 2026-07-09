@@ -6,7 +6,7 @@ export default function Footer() {
           <span className="footer__logo">🧬</span>
           <div>
             <strong>BioAventura</strong>
-            <p>Libro digital interactivo de Biología</p>
+            <p>Biología de Bachillerato — Unidad: Origen de la vida</p>
           </div>
         </div>
         <nav className="footer__links">

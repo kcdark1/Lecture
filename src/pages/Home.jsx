@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
-import { temas } from '../data/temas.js'
+import { temas, UNIDAD, NIVEL } from '../data/temas.js'
 import { actividades } from '../data/actividades.js'
+import { totalLecturasCurso } from '../data/curso.js'
 import TopicCard from '../components/TopicCard.jsx'
 
 export default function Home() {
@@ -12,12 +13,12 @@ export default function Home() {
         <div className="hero__blob hero__blob--1" />
         <div className="hero__blob hero__blob--2" />
         <div className="hero__content">
-          <span className="hero__eyebrow">🎓 Curso online de Biología</span>
+          <span className="hero__eyebrow">🎓 {NIVEL} — Biología · Unidad: {UNIDAD}</span>
           <h1 className="hero__title">
             Aprende con <span className="hero__highlight">BioAventura</span>
           </h1>
           <p className="hero__subtitle">
-            Un curso estilo Udemy con {temas.length} capítulos, lecturas, videos,
+            Un curso con {temas.length} temas sobre el origen de la vida: lecturas, videos,
             {actividades.length} actividades y diploma al terminar. Todo en una sola pantalla,
             sin cambiar de pestaña.
           </p>
@@ -27,11 +28,11 @@ export default function Home() {
           <div className="hero__stats">
             <div className="hero__stat">
               <strong>{temas.length}</strong>
-              <span>Capítulos</span>
+              <span>Temas</span>
             </div>
             <div className="hero__stat">
-              <strong>60</strong>
-              <span>Lecciones</span>
+              <strong>{totalLecturasCurso}</strong>
+              <span>Lecturas</span>
             </div>
             <div className="hero__stat">
               <strong>{actividades.length}</strong>
@@ -75,7 +76,7 @@ export default function Home() {
 
       <section className="section">
         <div className="section__head">
-          <h2 className="section__title">Capítulos del curso</h2>
+          <h2 className="section__title">Temas de la unidad</h2>
           <Link to="/curso" className="section__link">Ir al curso →</Link>
         </div>
         <div className="grid grid--cards">

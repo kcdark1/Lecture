@@ -1,64 +1,35 @@
 // ============================================================
-//  ESTRUCTURA DEL CURSO (estilo Udemy)
-//  Secuencia por capítulo: lectura → video → lectura →
-//  actividad → video → lectura → actividad → video → repaso
+//  CURSO — Unidad: Origen de la vida
+//  10 temas × 2 lecturas = 20 lecciones de lectura
+//  Por tema: lectura 1 → video → actividad 1 → lectura 2 → actividad 2
 // ============================================================
 
 import { temas } from './temas.js'
 import { getActividadesDeTema } from './actividades.js'
 
 const VIDEOS = {
-  celula: [
-    { id: '8IlzKri08kk', titulo: 'Introducción a la célula' },
-    { id: 'URlod8sL2bQ', titulo: 'Partes de la célula' },
-    { id: 'vwAJ8ByQHvc', titulo: 'Orgánulos celulares' },
-  ],
-  fotosintesis: [
-    { id: 'CMPLDvW7eqE', titulo: '¿Qué es la fotosíntesis?' },
-    { id: 'g78itG0GkKQ', titulo: 'Cloroplastos y clorofila' },
-    { id: 'W7YmMD7YMbQ', titulo: 'Importancia de la fotosíntesis' },
-  ],
-  genetica: [
-    { id: '_IVdyWzenig', titulo: 'ADN y genes' },
-    { id: '8kK2zwjRV0M', titulo: 'La doble hélice' },
-    { id: 'Mehz7tGjEuM', titulo: 'Herencia genética' },
-  ],
-  ecosistemas: [
-    { id: 'v6NS8m0l0ZM', titulo: '¿Qué es un ecosistema?' },
-    { id: 'izRvPaAWgyw', titulo: 'Cadenas alimenticias' },
-    { id: 'T8tKcCNfEsI', titulo: 'Equilibrio ecológico' },
-  ],
-  'cuerpo-humano': [
-    { id: 'dURvcK1z1kM', titulo: 'Sistema circulatorio' },
-    { id: 'GD-HPx36RzI', titulo: 'Sistema respiratorio' },
-    { id: 'fmI_OciHV_0', titulo: 'El cerebro y los nervios' },
-  ],
-  biodiversidad: [
-    { id: 'GK_vRtUJ6Hs', titulo: '¿Qué es la biodiversidad?' },
-    { id: 'BGnBdKExnAc', titulo: 'Amenazas a la naturaleza' },
-    { id: 'GihKqV9W0Jo', titulo: 'Cómo proteger el planeta' },
-  ],
+  'caracteristicas-vida': { id: 'cLn0jsye7hI', titulo: 'Características de los seres vivos' },
+  'teorias-origen': { id: '6VnE8lkPWyg', titulo: 'Abiogénesis y biogénesis' },
+  'tierra-primitiva': { id: 'm-1F8w1vJQE', titulo: 'La Tierra primitiva' },
+  'miller-urey': { id: 'eO7rb7NJb_4', titulo: 'Experimento de Miller-Urey' },
+  biopolimeros: { id: '_IVdyWzenig', titulo: 'Biopolímeros y monómeros' },
+  'mundo-rna': { id: 'IKH7wJrvZ_Q', titulo: 'Hipótesis del mundo del ARN' },
+  panspermia: { id: 'nWJkPsy5efQ', titulo: 'Teoría de la panspermia' },
+  procariotas: { id: 'w377bYgIjBM', titulo: 'Células procariotas' },
+  endosimbiosis: { id: 'G6Ru1JcV4-s', titulo: 'Teoría endosimbiótica' },
+  'evolucion-quimica': { id: 'IHnX5O2hmDM', titulo: 'Evolución química' },
 }
 
 function pasosCapitulo(temaId) {
   const acts = getActividadesDeTema(temaId)
-  const vids = VIDEOS[temaId] || [
-    { id: '8IlzKri08kk', titulo: 'Video educativo' },
-    { id: '8IlzKri08kk', titulo: 'Video educativo' },
-    { id: '8IlzKri08kk', titulo: 'Video educativo' },
-  ]
+  const vid = VIDEOS[temaId] || { id: '8IlzKri08kk', titulo: 'Video educativo' }
 
   return [
     { id: `${temaId}-s1`, tipo: 'lectura', temaId, pagina: 1, titulo: 'Lectura 1' },
-    { id: `${temaId}-s2`, tipo: 'video', temaId, youtubeId: vids[0].id, titulo: vids[0].titulo },
-    { id: `${temaId}-s3`, tipo: 'lectura', temaId, pagina: 2, titulo: 'Lectura 2' },
-    { id: `${temaId}-s4`, tipo: 'actividad', temaId, actividadId: acts[0]?.id, titulo: acts[0]?.titulo || 'Actividad 1' },
-    { id: `${temaId}-s5`, tipo: 'video', temaId, youtubeId: vids[1].id, titulo: vids[1].titulo },
-    { id: `${temaId}-s6`, tipo: 'lectura', temaId, pagina: 3, titulo: 'Lectura 3' },
-    { id: `${temaId}-s7`, tipo: 'lectura', temaId, pagina: 4, titulo: 'Lectura 4' },
-    { id: `${temaId}-s8`, tipo: 'actividad', temaId, actividadId: acts[1]?.id, titulo: acts[1]?.titulo || 'Actividad 2' },
-    { id: `${temaId}-s9`, tipo: 'video', temaId, youtubeId: vids[2].id, titulo: vids[2].titulo },
-    { id: `${temaId}-s10`, tipo: 'lectura', temaId, pagina: 5, titulo: 'Repaso del capítulo' },
+    { id: `${temaId}-s2`, tipo: 'video', temaId, youtubeId: vid.id, titulo: vid.titulo },
+    { id: `${temaId}-s3`, tipo: 'actividad', temaId, actividadId: acts[0]?.id, titulo: acts[0]?.titulo || 'Actividad 1' },
+    { id: `${temaId}-s4`, tipo: 'lectura', temaId, pagina: 2, titulo: 'Lectura 2' },
+    { id: `${temaId}-s5`, tipo: 'actividad', temaId, actividadId: acts[1]?.id, titulo: acts[1]?.titulo || 'Actividad 2' },
   ]
 }
 
@@ -78,5 +49,7 @@ export const getPaso = (pasoId) => todosLosPasos.find((p) => p.id === pasoId)
 export const getPasoIndex = (pasoId) => todosLosPasos.findIndex((p) => p.id === pasoId)
 
 export const totalPasosCurso = todosLosPasos.length
+
+export const totalLecturasCurso = temas.length * 2
 
 export const primerPasoId = todosLosPasos[0]?.id

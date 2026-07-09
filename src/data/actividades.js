@@ -1,190 +1,337 @@
 // ============================================================
-//  12 ACTIVIDADES — 2 por cada uno de los 6 capítulos
+//  20 ACTIVIDADES — 2 por cada uno de los 10 temas
+//  Unidad: Origen de la vida — Bachillerato
 // ============================================================
 
 export const actividades = [
-  // ---------- CAP. 1: LA CÉLULA ----------
+  // ---------- TEMA 1: CARACTERÍSTICAS DE LA VIDA ----------
   {
-    id: 'celula-ahorcado',
-    temaId: 'celula',
-    tipo: 'ahorcado',
-    titulo: 'Ahorcado: partes de la célula',
-    descripcion: 'Adivina la palabra relacionada con la célula antes de quedarte sin intentos.',
-    palabra: 'MITOCONDRIA',
-    pista: 'Orgánulo que produce la energía de la célula.',
-  },
-  {
-    id: 'celula-memoria',
-    temaId: 'celula',
-    tipo: 'memoria',
-    titulo: 'Memorama: la célula',
-    descripcion: 'Encuentra cada parte de la célula y la función que le corresponde.',
-    pares: [
-      { a: 'Núcleo', b: 'Guarda el ADN' },
-      { a: 'Membrana', b: 'Controla lo que entra y sale' },
-      { a: 'Mitocondria', b: 'Produce la energía' },
-      { a: 'Ribosoma', b: 'Fabrica proteínas' },
-      { a: 'Citoplasma', b: 'Medio interno de la célula' },
-      { a: 'Célula', b: 'Unidad básica de la vida' },
+    id: 'caracteristicas-vida-quiz',
+    temaId: 'caracteristicas-vida',
+    tipo: 'quiz',
+    titulo: 'Quiz: características de la vida',
+    descripcion: 'Responde las preguntas sobre las propiedades que definen a los seres vivos.',
+    preguntas: [
+      {
+        pregunta: '¿Cuál es la unidad básica de la vida?',
+        opciones: ['El átomo', 'La célula', 'El tejido'],
+        correcta: 1,
+      },
+      {
+        pregunta: '¿Qué característica permite mantener condiciones internas estables?',
+        opciones: ['Metabolismo', 'Homeostasis', 'Irritabilidad'],
+        correcta: 1,
+      },
+      {
+        pregunta: '¿Por qué los virus son un caso debatido?',
+        opciones: ['Porque son muy grandes', 'Porque no cumplen todas las características de la vida', 'Porque no tienen ADN'],
+        correcta: 1,
+      },
     ],
   },
-
-  // ---------- CAP. 2: LA FOTOSÍNTESIS ----------
   {
-    id: 'fotosintesis-completar',
-    temaId: 'fotosintesis',
+    id: 'caracteristicas-vida-completar',
+    temaId: 'caracteristicas-vida',
     tipo: 'completar',
-    titulo: 'Completa: la fotosíntesis',
-    descripcion: 'Usa el banco de palabras para completar el proceso de la fotosíntesis.',
-    banco: ['luz', 'clorofila', 'oxígeno', 'glucosa'],
+    titulo: 'Completa: características de la vida',
+    descripcion: 'Usa el banco de palabras para completar las oraciones.',
+    banco: ['célula', 'homeostasis', 'metabolismo', 'irritabilidad'],
     frases: [
-      { texto: 'Las plantas captan la ___ del Sol.', respuesta: 'luz' },
-      { texto: 'El pigmento verde que capta la luz es la ___.', respuesta: 'clorofila' },
-      { texto: 'La planta libera ___ al aire.', respuesta: 'oxígeno' },
-      { texto: 'La planta fabrica un azúcar llamado ___.', respuesta: 'glucosa' },
-    ],
-  },
-  {
-    id: 'fotosintesis-secuencia',
-    temaId: 'fotosintesis',
-    tipo: 'secuencia',
-    titulo: 'Ordena: la fotosíntesis',
-    descripcion: 'Coloca en orden los pasos que sigue la planta para fabricar su alimento.',
-    intro: 'Ordena los pasos de la fotosíntesis, del primero al último.',
-    pasos: [
-      'La planta capta la luz del Sol con la clorofila.',
-      'Toma dióxido de carbono del aire y agua del suelo.',
-      'Con la energía del Sol transforma esos ingredientes.',
-      'Produce glucosa, que es su alimento.',
-      'Libera oxígeno al aire.',
+      { texto: 'La ___ es la unidad básica de todos los seres vivos.', respuesta: 'célula' },
+      { texto: 'La ___ permite mantener condiciones internas estables.', respuesta: 'homeostasis' },
+      { texto: 'El ___ es el conjunto de reacciones químicas que mantienen la vida.', respuesta: 'metabolismo' },
+      { texto: 'La ___ es la capacidad de responder a estímulos del entorno.', respuesta: 'irritabilidad' },
     ],
   },
 
-  // ---------- CAP. 3: EL ADN Y LA GENÉTICA ----------
+  // ---------- TEMA 2: TEORÍAS DEL ORIGEN ----------
   {
-    id: 'genetica-anagrama',
-    temaId: 'genetica',
+    id: 'teorias-origen-clasificar',
+    temaId: 'teorias-origen',
+    tipo: 'clasificar',
+    titulo: 'Clasifica: abiogénesis y biogénesis',
+    descripcion: 'Coloca cada afirmación en la teoría correcta.',
+    categorias: [
+      { nombre: 'Abiogénesis', emoji: '⚗️' },
+      { nombre: 'Biogénesis', emoji: '🦠' },
+    ],
+    items: [
+      { texto: 'La vida surge de materia no viva', cat: 0 },
+      { texto: 'La vida solo proviene de vida preexistente', cat: 1 },
+      { texto: 'Aplica al origen primordial en la Tierra primitiva', cat: 0 },
+      { texto: 'Demostrada por el experimento de Pasteur', cat: 1 },
+      { texto: 'Generación espontánea de microorganismos', cat: 0 },
+      { texto: 'Todo organismo proviene de un organismo previo', cat: 1 },
+    ],
+  },
+  {
+    id: 'teorias-origen-completar',
+    temaId: 'teorias-origen',
+    tipo: 'completar',
+    titulo: 'Completa: teorías del origen',
+    descripcion: 'Usa el banco de palabras para completar las oraciones.',
+    banco: ['Pasteur', 'Redi', 'biogénesis', 'espontánea'],
+    frases: [
+      { texto: 'La generación ___ fue la creencia de que la vida surgía de materia inerte.', respuesta: 'espontánea' },
+      { texto: '___ demostró que los gusanos en la carne venían de huevos de moscas.', respuesta: 'Redi' },
+      { texto: '___ demostró la biogénesis con frascos de cuello de cisne.', respuesta: 'Pasteur' },
+      { texto: 'La ___ establece que la vida solo proviene de vida preexistente.', respuesta: 'biogénesis' },
+    ],
+  },
+
+  // ---------- TEMA 3: TIERRA PRIMITIVA ----------
+  {
+    id: 'tierra-primitiva-completar',
+    temaId: 'tierra-primitiva',
+    tipo: 'completar',
+    titulo: 'Completa: la Tierra primitiva',
+    descripcion: 'Completa las oraciones sobre las condiciones del planeta primitivo.',
+    banco: ['reductora', 'Arcaico', 'rayos', 'océanos'],
+    frases: [
+      { texto: 'La atmósfera primitiva era ___, sin oxígeno libre.', respuesta: 'reductora' },
+      { texto: 'En el eón ___ aparecieron los primeros océanos y la vida.', respuesta: 'Arcaico' },
+      { texto: 'Los ___ aportaban energía para reacciones químicas.', respuesta: 'rayos' },
+      { texto: 'Los ___ primitivos concentraron las moléculas orgánicas.', respuesta: 'océanos' },
+    ],
+  },
+  {
+    id: 'tierra-primitiva-relacionar',
+    temaId: 'tierra-primitiva',
+    tipo: 'relacionar',
+    titulo: 'Relaciona: eones y características',
+    descripcion: 'Une cada eón geológico con su característica principal.',
+    pares: [
+      { termino: 'Eón Hádico', definicion: 'Tierra incandescente y formación de la corteza' },
+      { termino: 'Eón Arcaico', definicion: 'Primeros océanos y aparición de la vida' },
+      { termino: 'Atmósfera reductora', definicion: 'Sin oxígeno libre, rica en metano y amoníaco' },
+      { termino: 'Océanos primitivos', definicion: 'Medio donde se concentraron moléculas orgánicas' },
+    ],
+  },
+
+  // ---------- TEMA 4: MILLER-UREY ----------
+  {
+    id: 'miller-urey-secuencia',
+    temaId: 'miller-urey',
+    tipo: 'secuencia',
+    titulo: 'Ordena: el experimento de Miller-Urey',
+    descripcion: 'Coloca en orden los pasos del experimento.',
+    intro: 'Ordena los pasos del experimento de Miller-Urey, del primero al último.',
+    pasos: [
+      'Se colocan gases primitivos (metano, amoníaco, hidrógeno) en el aparato.',
+      'Se calienta el agua para simular el océano primitivo.',
+      'Las descargas eléctricas simulan los rayos atmosféricos.',
+      'Los productos se disuelven en el agua caliente del frasco.',
+      'Tras una semana, se analizan los compuestos orgánicos formados.',
+    ],
+  },
+  {
+    id: 'miller-urey-quiz',
+    temaId: 'miller-urey',
+    tipo: 'quiz',
+    titulo: 'Quiz: Miller-Urey',
+    descripcion: 'Responde las preguntas sobre el famoso experimento.',
+    preguntas: [
+      {
+        pregunta: '¿En qué año realizaron Miller y Urey su experimento?',
+        opciones: ['1923', '1953', '1973'],
+        correcta: 1,
+      },
+      {
+        pregunta: '¿Qué compuestos orgánicos se sintetizaron principalmente?',
+        opciones: ['Lípidos', 'Aminoácidos', 'Vitaminas'],
+        correcta: 1,
+      },
+      {
+        pregunta: '¿Qué simulaban las descargas eléctricas del aparato?',
+        opciones: ['Erupciones volcánicas', 'Rayos atmosféricos', 'Radiación solar'],
+        correcta: 1,
+      },
+    ],
+  },
+
+  // ---------- TEMA 5: BIOPOLÍMEROS ----------
+  {
+    id: 'biopolimeros-memoria',
+    temaId: 'biopolimeros',
+    tipo: 'memoria',
+    titulo: 'Memorama: biopolímeros',
+    descripcion: 'Encuentra cada biopolímero y su monómero correspondiente.',
+    pares: [
+      { a: 'Proteína', b: 'Aminoácido' },
+      { a: 'ADN', b: 'Nucleótido' },
+      { a: 'Almidón', b: 'Glucosa' },
+      { a: 'Lípido', b: 'Ácido graso' },
+      { a: 'Monómero', b: 'Unidad básica del polímero' },
+      { a: 'Coacervado', b: 'Gota de macromoléculas' },
+    ],
+  },
+  {
+    id: 'biopolimeros-completar',
+    temaId: 'biopolimeros',
+    tipo: 'completar',
+    titulo: 'Completa: biopolímeros',
+    descripcion: 'Completa las oraciones sobre macromoléculas y monómeros.',
+    banco: ['monómeros', 'enzimas', 'coacervados', 'autocatalítico'],
+    frases: [
+      { texto: 'Los polímeros se forman al unir muchos ___.', respuesta: 'monómeros' },
+      { texto: 'Las ___ son proteínas que catalizan reacciones biológicas.', respuesta: 'enzimas' },
+      { texto: 'Los ___ son gotas de macromoléculas con propiedades de membrana.', respuesta: 'coacervados' },
+      { texto: 'Un sistema ___ produce moléculas que aceleran su propia formación.', respuesta: 'autocatalítico' },
+    ],
+  },
+
+  // ---------- TEMA 6: MUNDO DEL ARN ----------
+  {
+    id: 'mundo-rna-anagrama',
+    temaId: 'mundo-rna',
     tipo: 'anagrama',
-    titulo: 'Ordena la palabra: genética',
+    titulo: 'Ordena la palabra: mundo del ARN',
     descripcion: 'Las letras están desordenadas. ¡Colócalas en orden con ayuda de la pista!',
     palabras: [
-      { palabra: 'GEN', pista: 'Fragmento de ADN que determina una característica.' },
-      { palabra: 'CROMOSOMA', pista: 'Estructura que empaqueta el ADN.' },
-      { palabra: 'HERENCIA', pista: 'Paso de características de padres a hijos.' },
+      { palabra: 'RIBOZIMA', pista: 'ARN con actividad catalítica.' },
+      { palabra: 'NUCLEOTIDO', pista: 'Monómero de los ácidos nucleicos.' },
+      { palabra: 'RIBOSOMA', pista: 'Estructura formada principalmente por ARN.' },
       { palabra: 'HELICE', pista: 'Forma de escalera retorcida del ADN.' },
     ],
   },
   {
-    id: 'genetica-verdaderofalso',
-    temaId: 'genetica',
-    tipo: 'verdaderofalso',
-    titulo: 'Verdadero o Falso: el ADN',
-    descripcion: 'Decide si cada afirmación sobre el ADN y la herencia es verdadera o falsa.',
-    afirmaciones: [
-      { texto: 'El ADN tiene forma de doble hélice.', esVerdadero: true, explicacion: 'Sí, parece una escalera retorcida.' },
-      { texto: 'Los humanos tenemos 10 cromosomas en total.', esVerdadero: false, explicacion: 'En realidad tenemos 46 (23 pares).' },
-      { texto: 'Un gen determina una característica, como el color de ojos.', esVerdadero: true, explicacion: 'Correcto, los genes controlan nuestras características.' },
-      { texto: 'Recibimos todos nuestros genes de un solo progenitor.', esVerdadero: false, explicacion: 'Recibimos la mitad de cada progenitor.' },
+    id: 'mundo-rna-completar',
+    temaId: 'mundo-rna',
+    tipo: 'completar',
+    titulo: 'Completa: mundo del ARN',
+    descripcion: 'Completa las oraciones sobre la hipótesis del mundo del ARN.',
+    banco: ['ribozimas', 'ARN', 'ADN', 'catalizar'],
+    frases: [
+      { texto: 'El ___ puede almacenar información y catalizar reacciones.', respuesta: 'ARN' },
+      { texto: 'Las ___ son moléculas de ARN con actividad catalítica.', respuesta: 'ribozimas' },
+      { texto: 'El ___ reemplazó al ARN por ser más estable.', respuesta: 'ADN' },
+      { texto: 'Las ribozimas pueden ___ reacciones químicas.', respuesta: 'catalizar' },
     ],
   },
 
-  // ---------- CAP. 4: LOS ECOSISTEMAS ----------
+  // ---------- TEMA 7: PANSPERMIA ----------
   {
-    id: 'ecosistemas-sopa',
-    temaId: 'ecosistemas',
-    tipo: 'sopa',
-    titulo: 'Sopa de letras: ecosistemas',
-    descripcion: 'Encuentra las palabras escondidas relacionadas con los ecosistemas.',
-    palabras: ['PLANTA', 'ANIMAL', 'SUELO', 'AGUA', 'ENERGIA', 'HONGO'],
-  },
-  {
-    id: 'ecosistemas-clasificar',
-    temaId: 'ecosistemas',
-    tipo: 'clasificar',
-    titulo: 'Clasifica: bióticos y abióticos',
-    descripcion: 'Coloca cada elemento en el grupo correcto: con vida o sin vida.',
-    categorias: [
-      { nombre: 'Biótico (con vida)', emoji: '🐛' },
-      { nombre: 'Abiótico (sin vida)', emoji: '💧' },
-    ],
-    items: [
-      { texto: 'Árbol', cat: 0 },
-      { texto: 'Agua', cat: 1 },
-      { texto: 'Conejo', cat: 0 },
-      { texto: 'Luz del sol', cat: 1 },
-      { texto: 'Hongo', cat: 0 },
-      { texto: 'Roca', cat: 1 },
-      { texto: 'Bacteria', cat: 0 },
-      { texto: 'Temperatura', cat: 1 },
-    ],
-  },
-
-  // ---------- CAP. 5: EL CUERPO HUMANO ----------
-  {
-    id: 'cuerpo-humano-relacionar',
-    temaId: 'cuerpo-humano',
-    tipo: 'relacionar',
-    titulo: 'Relaciona: órganos y funciones',
-    descripcion: 'Une cada órgano con la función que realiza en el cuerpo.',
-    pares: [
-      { termino: 'Corazón', definicion: 'Bombea la sangre por el cuerpo' },
-      { termino: 'Pulmones', definicion: 'Toman oxígeno del aire' },
-      { termino: 'Cerebro', definicion: 'Controla y coordina el cuerpo' },
-      { termino: 'Estómago', definicion: 'Ayuda a digerir la comida' },
-    ],
-  },
-  {
-    id: 'cuerpo-humano-quiz',
-    temaId: 'cuerpo-humano',
+    id: 'panspermia-quiz',
+    temaId: 'panspermia',
     tipo: 'quiz',
-    titulo: 'Quiz: el cuerpo humano',
-    descripcion: 'Responde las preguntas sobre los sistemas del cuerpo humano.',
+    titulo: 'Quiz: panspermia',
+    descripcion: 'Responde las preguntas sobre la teoría de la panspermia.',
     preguntas: [
       {
-        pregunta: '¿Qué órgano bombea la sangre por todo el cuerpo?',
-        opciones: ['Los pulmones', 'El corazón', 'El cerebro'],
+        pregunta: '¿Qué propone la teoría de la panspermia?',
+        opciones: ['Que la vida surgió solo en la Tierra', 'Que la vida o sus componentes llegaron del espacio', 'Que no existió un origen de la vida'],
         correcta: 1,
       },
       {
-        pregunta: '¿Dónde ocurre el intercambio de oxígeno y dióxido de carbono?',
-        opciones: ['En el estómago', 'En los alvéolos de los pulmones', 'En el hígado'],
+        pregunta: '¿Qué se encontró en el meteorito de Murchison?',
+        opciones: ['Fósiles de bacterias', 'Aminoácidos', 'ADN completo'],
         correcta: 1,
       },
       {
-        pregunta: '¿Qué célula es la principal del sistema nervioso?',
-        opciones: ['La neurona', 'La mitocondria', 'El glóbulo rojo'],
-        correcta: 0,
+        pregunta: '¿La panspermia explica el primer origen de la vida en el universo?',
+        opciones: ['Sí, completamente', 'No, solo propone cómo se dispersó', 'Solo para la Tierra'],
+        correcta: 1,
       },
+    ],
+  },
+  {
+    id: 'panspermia-completar',
+    temaId: 'panspermia',
+    tipo: 'completar',
+    titulo: 'Completa: panspermia',
+    descripcion: 'Completa las oraciones sobre la teoría de la panspermia.',
+    banco: ['meteoritos', 'Arrhenius', 'aminoácidos', 'espacio'],
+    frases: [
+      { texto: 'La panspermia propone que la vida llegó desde el ___.', respuesta: 'espacio' },
+      { texto: 'Se han encontrado ___ en meteoritos como el de Murchison.', respuesta: 'aminoácidos' },
+      { texto: 'La panspermia fue propuesta por Svante ___.', respuesta: 'Arrhenius' },
+      { texto: 'Los ___ pueden transportar compuestos orgánicos a la Tierra.', respuesta: 'meteoritos' },
     ],
   },
 
-  // ---------- CAP. 6: LA BIODIVERSIDAD ----------
+  // ---------- TEMA 8: PROCARIOTAS ----------
   {
-    id: 'biodiversidad-completar',
-    temaId: 'biodiversidad',
-    tipo: 'completar',
-    titulo: 'Completa: la biodiversidad',
-    descripcion: 'Completa las oraciones sobre la variedad de la vida y su cuidado.',
-    banco: ['biodiversidad', 'especie', 'extinción', 'hábitat'],
-    frases: [
-      { texto: 'La ___ es la variedad de seres vivos de la Tierra.', respuesta: 'biodiversidad' },
-      { texto: 'Un grupo de seres parecidos que se reproducen entre sí es una ___.', respuesta: 'especie' },
-      { texto: 'La desaparición total de una especie se llama ___.', respuesta: 'extinción' },
-      { texto: 'El lugar donde vive una especie es su ___.', respuesta: 'hábitat' },
+    id: 'procariotas-clasificar',
+    temaId: 'procariotas',
+    tipo: 'clasificar',
+    titulo: 'Clasifica: procariotas y eucariotas',
+    descripcion: 'Coloca cada característica en el tipo de célula correcto.',
+    categorias: [
+      { nombre: 'Procariota', emoji: '🦠' },
+      { nombre: 'Eucariota', emoji: '🔬' },
+    ],
+    items: [
+      { texto: 'Sin núcleo definido', cat: 0 },
+      { texto: 'ADN circular en nucleoide', cat: 0 },
+      { texto: 'Con núcleo y orgánulos membranosos', cat: 1 },
+      { texto: 'Fisión binaria', cat: 0 },
+      { texto: 'Mitocondrias', cat: 1 },
+      { texto: 'Primeras células en la Tierra', cat: 0 },
     ],
   },
   {
-    id: 'biodiversidad-verdaderofalso',
-    temaId: 'biodiversidad',
-    tipo: 'verdaderofalso',
-    titulo: 'Verdadero o Falso: biodiversidad',
-    descripcion: 'Decide si cada afirmación sobre la biodiversidad es verdadera o falsa.',
-    afirmaciones: [
-      { texto: 'La biodiversidad es la variedad de seres vivos de la Tierra.', esVerdadero: true, explicacion: '¡Correcto! Incluye animales, plantas, hongos y microbios.' },
-      { texto: 'La contaminación ayuda a la biodiversidad.', esVerdadero: false, explicacion: 'La contaminación la daña gravemente.' },
-      { texto: 'Reciclar ayuda a proteger la naturaleza.', esVerdadero: true, explicacion: '¡Así es! Los pequeños hábitos suman mucho.' },
-      { texto: 'La extinción significa que una especie aumenta.', esVerdadero: false, explicacion: 'Significa que la especie desaparece por completo.' },
+    id: 'procariotas-ahorcado',
+    temaId: 'procariotas',
+    tipo: 'ahorcado',
+    titulo: 'Ahorcado: procariotas',
+    descripcion: 'Adivina la palabra relacionada con las primeras células.',
+    palabra: 'ESTROMATOLITO',
+    pista: 'Estructura fósil formada por capas de cianobacterias.',
+  },
+
+  // ---------- TEMA 9: ENDOSIMBIOSIS ----------
+  {
+    id: 'endosimbiosis-relacionar',
+    temaId: 'endosimbiosis',
+    tipo: 'relacionar',
+    titulo: 'Relaciona: endosimbiosis',
+    descripcion: 'Une cada orgánulo con su origen bacteriano.',
+    pares: [
+      { termino: 'Mitocondria', definicion: 'Bacteria aeróbica incorporada' },
+      { termino: 'Cloroplasto', definicion: 'Cianobacteria incorporada' },
+      { termino: 'ADN circular propio', definicion: 'Evidencia de origen bacteriano' },
+      { termino: 'Lynn Margulis', definicion: 'Propuso la teoría endosimbiótica' },
     ],
+  },
+  {
+    id: 'endosimbiosis-memoria',
+    temaId: 'endosimbiosis',
+    tipo: 'memoria',
+    titulo: 'Memorama: endosimbiosis',
+    descripcion: 'Encuentra cada evidencia y su significado.',
+    pares: [
+      { a: 'ADN circular', b: 'Similar al de bacterias' },
+      { a: 'Doble membrana', b: 'Membrana bacteriana + vesícula' },
+      { a: 'Ribosomas 70S', b: 'Tipo bacteriano' },
+      { a: 'División binaria', b: 'Se reproduce como bacteria' },
+      { a: 'Mitocondria', b: 'Produce energía (ATP)' },
+      { a: 'Cloroplasto', b: 'Realiza fotosíntesis' },
+    ],
+  },
+
+  // ---------- TEMA 10: EVOLUCIÓN QUÍMICA ----------
+  {
+    id: 'evolucion-quimica-secuencia',
+    temaId: 'evolucion-quimica',
+    tipo: 'secuencia',
+    titulo: 'Ordena: evolución química',
+    descripcion: 'Coloca en orden los pasos de la evolución química hacia la vida.',
+    intro: 'Ordena los pasos de la evolución química, del más simple al más complejo.',
+    pasos: [
+      'Formación de átomos y moléculas simples en la Tierra primitiva.',
+      'Síntesis de monómeros orgánicos (aminoácidos, nucleótidos).',
+      'Formación de polímeros y sistemas autocatalíticos.',
+      'Aparición de protocélulas con membrana.',
+      'Surgimiento de las primeras células procariotas.',
+    ],
+  },
+  {
+    id: 'evolucion-quimica-sopa',
+    temaId: 'evolucion-quimica',
+    tipo: 'sopa',
+    titulo: 'Sopa de letras: evolución química',
+    descripcion: 'Encuentra las palabras escondidas sobre el origen de la vida.',
+    palabras: ['LUCA', 'FOSIL', 'OXIGENO', 'QUIMICA', 'VIDA', 'ARN'],
   },
 ]
 
