@@ -117,17 +117,6 @@ export function generarReporteDocente() {
   return reporte
 }
 
-export function descargarReporte() {
-  const reporte = generarReporteDocente()
-  const blob = new Blob([JSON.stringify(reporte, null, 2)], { type: 'application/json' })
-  const url = URL.createObjectURL(blob)
-  const a = document.createElement('a')
-  a.href = url
-  a.download = `bioaventura-reporte-${new Date().toISOString().slice(0, 10)}.json`
-  a.click()
-  URL.revokeObjectURL(url)
-}
-
 export function getTodosUsuarios() {
   return leer().usuarios
 }

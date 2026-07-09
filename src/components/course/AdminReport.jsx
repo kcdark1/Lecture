@@ -1,15 +1,16 @@
 import { useState } from 'react'
-import { verificarPasswordDocente, descargarReporte } from '../../utils/storage.js'
+import { verificarPasswordDocente } from '../../utils/storage.js'
 
 export default function AdminReport() {
   const [abierto, setAbierto] = useState(false)
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
 
-  const intentar = (e) => {
+  const intentar = async (e) => {
     e.preventDefault()
     if (verificarPasswordDocente(password)) {
-      descargarReporte()
+      const { descargarReportePdf } = await import('../../utils/reportePdf.js')
+      descargarReportePdf()
       setAbierto(false)
       setPassword('')
       setError('')
@@ -28,7 +29,7 @@ export default function AdminReport() {
         <div className="modal-overlay">
           <div className="modal-card modal-card--sm">
             <h2>📊 Reporte de estudiantes</h2>
-            <p>Ingresa la contraseña para descargar el archivo con nombres y puntajes.</p>
+            <p>Ingresa la contraseña para descargar el reporte en PDF con nombres y puntajes.</p>
             <form onSubmit={intentar} className="modal-form">
               <label>
                 Contraseña
@@ -46,7 +47,7 @@ export default function AdminReport() {
                   Cancelar
                 </button>
                 <button type="submit" className="btn btn--primary">
-                  Descargar reporte
+                  Descargar PDF
                 </button>
               </div>
             </form>
