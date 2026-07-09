@@ -4,6 +4,7 @@
 // ============================================================
 
 import { paginasPorTema } from './capitulos.js'
+import { getImagenTema } from './media.js'
 
 export const UNIDAD = 'Origen de la vida'
 export const NIVEL = 'Bachillerato'
@@ -17,8 +18,6 @@ const temas = [
     subtitulo: '¿Qué define a un ser vivo?',
     emoji: '🌿',
     color: '#10b981',
-    imagen: 'https://commons.wikimedia.org/wiki/Special:FilePath/Diversity_of_life.jpg?width=900',
-    imagenAlt: 'Diversidad de seres vivos en la Tierra',
     resumen:
       'Antes de estudiar cómo surgió la vida, debemos saber qué la distingue de la materia inerte. Los seres vivos comparten siete características fundamentales que los científicos usan para identificarlos.',
     datosCuriosos: [
@@ -41,8 +40,6 @@ const temas = [
     subtitulo: 'Abiogénesis, biogénesis y el experimento de Pasteur',
     emoji: '🔬',
     color: '#3b82f6',
-    imagen: 'https://commons.wikimedia.org/wiki/Special:FilePath/Louis_Pasteur%2C_foto_avtorstva_F%C3%A9lix_Nadar_Cr%C3%A9dit_des_Mus%C3%A9es_Nationaux%2C_Paris.jpg?width=600',
-    imagenAlt: 'Louis Pasteur, científico que demostró la biogénesis',
     resumen:
       'Durante siglos se debatió si la vida podía surgir espontáneamente de la materia muerta. Las teorías de abiogénesis y biogénesis, y el experimento de Pasteur, marcaron un antes y un después en la biología.',
     datosCuriosos: [
@@ -65,8 +62,6 @@ const temas = [
     subtitulo: 'Condiciones del planeta hace 4 000 millones de años',
     emoji: '🌍',
     color: '#f59e0b',
-    imagen: 'https://commons.wikimedia.org/wiki/Special:FilePath/Early_Earth.jpg?width=900',
-    imagenAlt: 'Representación artística de la Tierra primitiva',
     resumen:
       'Hace unos 4 600 millones de años se formó la Tierra. Su atmósfera, temperatura y composición eran muy distintas a las actuales, y esas condiciones fueron clave para que surgieran las primeras moléculas orgánicas.',
     datosCuriosos: [
@@ -89,8 +84,6 @@ const temas = [
     subtitulo: 'Síntesis de moléculas orgánicas en el laboratorio',
     emoji: '⚗️',
     color: '#8b5cf6',
-    imagen: 'https://commons.wikimedia.org/wiki/Special:FilePath/MillerUreyExperiment.svg?width=700',
-    imagenAlt: 'Esquema del experimento de Miller-Urey',
     resumen:
       'En 1953, Stanley Miller y Harold Urey recrearon en el laboratorio las condiciones de la Tierra primitiva y lograron sintetizar aminoácidos, demostrando que la materia orgánica podía formarse sin vida.',
     datosCuriosos: [
@@ -113,8 +106,6 @@ const temas = [
     subtitulo: 'De los monómeros a las macromoléculas',
     emoji: '🧪',
     color: '#06b6d4',
-    imagen: 'https://commons.wikimedia.org/wiki/Special:FilePath/Biopolymer.svg?width=800',
-    imagenAlt: 'Representación de biopolímeros',
     resumen:
       'Las proteínas, los ácidos nucleicos, los carbohidratos y los lípidos son los pilares de la vida. Todos se forman a partir de monómeros más simples que se unen para crear macromoléculas.',
     datosCuriosos: [
@@ -137,8 +128,6 @@ const temas = [
     subtitulo: 'Cuando el ARN era el protagonista',
     emoji: '🧬',
     color: '#ec4899',
-    imagen: 'https://commons.wikimedia.org/wiki/Special:FilePath/RNA-World-Hypothesis.jpg?width=800',
-    imagenAlt: 'Hipótesis del mundo del ARN',
     resumen:
       'La hipótesis del mundo del ARN propone que, antes del ADN y las proteínas, el ARN cumplía las funciones de almacenar información y catalizar reacciones, siendo la molécula central de la vida primitiva.',
     datosCuriosos: [
@@ -161,8 +150,6 @@ const temas = [
     subtitulo: '¿La vida llegó desde el espacio?',
     emoji: '🚀',
     color: '#6366f1',
-    imagen: 'https://commons.wikimedia.org/wiki/Special:FilePath/Panspermia.jpg?width=800',
-    imagenAlt: 'Representación de la teoría de la panspermia',
     resumen:
       'La panspermia sugiere que la vida, o sus componentes básicos, podrían haber llegado a la Tierra desde otros planetas o cometas. Es una alternativa a la idea de que la vida surgió exclusivamente aquí.',
     datosCuriosos: [
@@ -185,8 +172,6 @@ const temas = [
     subtitulo: 'Los pioneros de la vida celular',
     emoji: '🦠',
     color: '#22c55e',
-    imagen: 'https://commons.wikimedia.org/wiki/Special:FilePath/Prokaryote_cell_diagram.svg?width=800',
-    imagenAlt: 'Estructura de una célula procariota',
     resumen:
       'Las primeras células fueron procariotas: organismos sin núcleo definido, simples pero capaces de metabolizar, reproducirse y adaptarse. Los fósiles más antiguos de vida datan de hace unos 3 500 millones de años.',
     datosCuriosos: [
@@ -209,8 +194,6 @@ const temas = [
     subtitulo: 'Cómo surgieron las células eucariotas',
     emoji: '🔋',
     color: '#ef4444',
-    imagen: 'https://commons.wikimedia.org/wiki/Special:FilePath/Endosymbiosis.svg?width=800',
-    imagenAlt: 'Esquema de la teoría endosimbiótica',
     resumen:
       'Lynn Margulis propuso que las mitocondrias y los cloroplastos fueron originalmente bacterias libres que fueron incorporadas por células más grandes, dando origen a las células eucariotas complejas.',
     datosCuriosos: [
@@ -233,8 +216,6 @@ const temas = [
     subtitulo: 'Del átomo al organismo vivo',
     emoji: '⏳',
     color: '#0d9488',
-    imagen: 'https://commons.wikimedia.org/wiki/Special:FilePath/Geologic_time_scale_-_clock representation.svg?width=800',
-    imagenAlt: 'Escala de tiempo geológico',
     resumen:
       'La evolución química describe la transición gradual desde moléculas simples hasta sistemas vivos complejos. El registro fósil, la bioquímica y los experimentos de laboratorio aportan evidencias de este proceso.',
     datosCuriosos: [
@@ -261,9 +242,24 @@ export const getPagina = (temaId, num) => {
 
 export const totalPaginas = (temaId) => getTema(temaId)?.paginas?.length ?? 0
 
-const temasEnriquecidos = temas.map((t) => ({
-  ...t,
-  paginas: paginasPorTema[t.id] || [],
-}))
+const temasEnriquecidos = temas.map((t) => {
+  const img = getImagenTema(t.id)
+  return {
+    ...t,
+    imagen: img?.url ?? '',
+    imagenAlt: img?.alt ?? t.titulo,
+    imagenFuente: img?.fuente ?? '',
+    paginas: (paginasPorTema[t.id] || []).map((p) =>
+      p.imagenAlt
+        ? {
+            ...p,
+            imagen: img?.url ?? '',
+            imagenAlt: p.imagenAlt || img?.alt,
+            imagenFuente: img?.fuente ?? '',
+          }
+        : p
+    ),
+  }
+})
 
 export { temasEnriquecidos as temas }

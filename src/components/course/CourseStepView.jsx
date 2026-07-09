@@ -18,6 +18,14 @@ function VideoStep({ paso }) {
       <p className="curso-video__nota">
         Mira el video con atención. Cuando termines, pulsa <strong>“Marcar como visto y continuar”</strong>.
       </p>
+      {paso.videoUrl && (
+        <p className="curso-video__fuente">
+          Video en español:{' '}
+          <a href={paso.videoUrl} target="_blank" rel="noopener noreferrer">
+            {paso.videoCanal ? `${paso.titulo} — ${paso.videoCanal}` : paso.titulo}
+          </a>
+        </p>
+      )}
     </div>
   )
 }

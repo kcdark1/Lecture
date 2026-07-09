@@ -6,27 +6,28 @@
 
 import { temas } from './temas.js'
 import { getActividadesDeTema } from './actividades.js'
-
-const VIDEOS = {
-  'caracteristicas-vida': { id: 'cLn0jsye7hI', titulo: 'Características de los seres vivos' },
-  'teorias-origen': { id: '6VnE8lkPWyg', titulo: 'Abiogénesis y biogénesis' },
-  'tierra-primitiva': { id: 'm-1F8w1vJQE', titulo: 'La Tierra primitiva' },
-  'miller-urey': { id: 'eO7rb7NJb_4', titulo: 'Experimento de Miller-Urey' },
-  biopolimeros: { id: '_IVdyWzenig', titulo: 'Biopolímeros y monómeros' },
-  'mundo-rna': { id: 'IKH7wJrvZ_Q', titulo: 'Hipótesis del mundo del ARN' },
-  panspermia: { id: 'nWJkPsy5efQ', titulo: 'Teoría de la panspermia' },
-  procariotas: { id: 'w377bYgIjBM', titulo: 'Células procariotas' },
-  endosimbiosis: { id: 'G6Ru1JcV4-s', titulo: 'Teoría endosimbiótica' },
-  'evolucion-quimica': { id: 'IHnX5O2hmDM', titulo: 'Evolución química' },
-}
+import { getVideoTema } from './media.js'
 
 function pasosCapitulo(temaId) {
   const acts = getActividadesDeTema(temaId)
-  const vid = VIDEOS[temaId] || { id: '8IlzKri08kk', titulo: 'Video educativo' }
+  const vid = getVideoTema(temaId) || {
+    id: 'gJd65_Xrxs4',
+    titulo: 'Video educativo',
+    url: 'https://www.youtube.com/watch?v=gJd65_Xrxs4',
+    canal: 'Amoeba Sisters en Español',
+  }
 
   return [
     { id: `${temaId}-s1`, tipo: 'lectura', temaId, pagina: 1, titulo: 'Lectura 1' },
-    { id: `${temaId}-s2`, tipo: 'video', temaId, youtubeId: vid.id, titulo: vid.titulo },
+    {
+      id: `${temaId}-s2`,
+      tipo: 'video',
+      temaId,
+      youtubeId: vid.id,
+      titulo: vid.titulo,
+      videoUrl: vid.url,
+      videoCanal: vid.canal,
+    },
     { id: `${temaId}-s3`, tipo: 'actividad', temaId, actividadId: acts[0]?.id, titulo: acts[0]?.titulo || 'Actividad 1' },
     { id: `${temaId}-s4`, tipo: 'lectura', temaId, pagina: 2, titulo: 'Lectura 2' },
     { id: `${temaId}-s5`, tipo: 'actividad', temaId, actividadId: acts[1]?.id, titulo: acts[1]?.titulo || 'Actividad 2' },

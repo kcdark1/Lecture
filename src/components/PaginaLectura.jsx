@@ -19,6 +19,9 @@ export default function PaginaLectura({ pagina, tema }) {
             color={tema.color}
             ratio="16 / 9"
           />
+          {pagina.imagenFuente && (
+            <p className="pagina-lectura__fuente">{pagina.imagenFuente}</p>
+          )}
         </div>
       )}
 

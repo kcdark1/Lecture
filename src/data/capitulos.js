@@ -1,6 +1,7 @@
 // ============================================================
 //  10 temas × 2 páginas = 20 lecturas
 //  Unidad: Origen de la vida — Bachillerato
+//  Imágenes: ver src/data/media.js
 // ============================================================
 
 export const paginasPorTema = {
@@ -14,7 +15,6 @@ export const paginasPorTema = {
         "Los virus son un caso especial: tienen material genético y se reproducen, pero solo dentro de una célula huésped. No tienen metabolismo propio ni células, por lo que muchos biólogos no los consideran seres vivos."
       ],
       "destacado": "🌿 La vida no es una sustancia: es un conjunto de procesos organizados.",
-      "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Diversity_of_life.jpg?width=900",
       "imagenAlt": "Diversidad de seres vivos"
     },
     {
@@ -42,8 +42,7 @@ export const paginasPorTema = {
         "En 1668, Francesco Redi demostró con un experimento elegante que los gusanos en la carne no surgían espontáneamente: aparecían solo cuando las moscas podían depositar huevos."
       ],
       "destacado": "🔬 La ciencia reemplazó la superstición con experimentos controlados.",
-      "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Louis_Pasteur%2C_foto_avtorstva_F%C3%A9lix_Nadar_Cr%C3%A9dit_des_Mus%C3%A9es_Nationaux%2C_Paris.jpg?width=600",
-      "imagenAlt": "Louis Pasteur"
+      "imagenAlt": "Experimento de Pasteur"
     },
     {
       "numero": 2,
@@ -70,7 +69,6 @@ export const paginasPorTema = {
         "Cuando la superficie se enfrió lo suficiente, el vapor de agua se condensó formando lluvias intensas que crearon los primeros océanos hace unos 4 000 millones de años."
       ],
       "destacado": "🌍 La Tierra primitiva era un mundo muy distinto al actual.",
-      "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Early_Earth.jpg?width=900",
       "imagenAlt": "Tierra primitiva"
     },
     {
@@ -98,7 +96,6 @@ export const paginasPorTema = {
         "Miller encontró que el 10–15% del carbono del sistema se había convertido en compuestos orgánicos. Entre ellos, varios aminoácidos —los bloques de las proteínas— incluyendo glicina y alanina."
       ],
       "destacado": "⚗️ Miller y Urey demostraron que la materia orgánica puede formarse sin vida.",
-      "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/MillerUreyExperiment.svg?width=700",
       "imagenAlt": "Experimento de Miller-Urey"
     },
     {
@@ -126,7 +123,6 @@ export const paginasPorTema = {
         "Oparin y Haldane propusieron que gotas de coacervados —agregados de macromoléculas rodeados por una membrana molecular— pudieron ser los precursores de las primeras células."
       ],
       "destacado": "🧪 Los monómeros son los \"ladrillos\"; los polímeros son los \"muros\".",
-      "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Biopolymer.svg?width=800",
       "imagenAlt": "Biopolímeros"
     },
     {
@@ -154,8 +150,7 @@ export const paginasPorTema = {
         "En el mundo del ARN, las primeras moléculas de ARN se autorreplicaban y catalizaban su propia síntesis. Con el tiempo, algunas adquirieron la capacidad de sintetizar proteínas simples."
       ],
       "destacado": "🧬 El ARN puede ser molécula de información y enzima a la vez.",
-      "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/RNA-World-Hypothesis.jpg?width=800",
-      "imagenAlt": "Mundo del ARN"
+      "imagenAlt": "Estructura del ARN"
     },
     {
       "numero": 2,
@@ -182,8 +177,7 @@ export const paginasPorTema = {
         "El meteorito de Murchison (Australia, 1969) contenía más de 90 aminoácidos, incluyendo los usados por la vida terrestre y otros que no existen en organismos actuales."
       ],
       "destacado": "🚀 La panspermia desplaza el problema, no lo resuelve.",
-      "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Panspermia.jpg?width=800",
-      "imagenAlt": "Panspermia"
+      "imagenAlt": "Meteorito de Murchison"
     },
     {
       "numero": 2,
@@ -210,7 +204,6 @@ export const paginasPorTema = {
         "Las cianobacterias fueron las primeras células en realizar fotosíntesis, liberando oxígeno como subproducto. Esto ocurrió hace unos 2 700 millones de años."
       ],
       "destacado": "🦠 Las procariotas dominaron la Tierra durante miles de millones de años.",
-      "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Prokaryote_cell_diagram.svg?width=800",
       "imagenAlt": "Célula procariota"
     },
     {
@@ -238,7 +231,6 @@ export const paginasPorTema = {
         "Se cree que una bacteria aeróbica (que usaba oxígeno para obtener energía) fue fagocitada por una célula primitiva. La bacteria producía ATP eficientemente; la célula huésped le daba protección y nutrientes."
       ],
       "destacado": "🔋 Las mitocondrias eran bacterias que se convirtieron en \"centrales eléctricas\" celulares.",
-      "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Endosymbiosis.svg?width=800",
       "imagenAlt": "Teoría endosimbiótica"
     },
     {
@@ -266,7 +258,6 @@ export const paginasPorTema = {
         "Hace 2 400 millones de años, el oxígeno se acumuló drásticamente en la atmósfera por la fotosíntesis de cianobacterias. Este evento, la Gran Oxidación, fue uno de los más transformadores de la historia del planeta."
       ],
       "destacado": "⏳ La vida no apareció de golpe: fue un proceso gradual de millones de años.",
-      "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Geologic_time_scale_-_clock_representation.svg?width=800",
       "imagenAlt": "Escala de tiempo geológico"
     },
     {
