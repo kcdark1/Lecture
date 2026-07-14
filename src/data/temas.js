@@ -234,8 +234,8 @@ const temas = [
     id: 'agua',
     numero: 11,
     unidad: UNIDAD,
-    titulo: 'Agua',
-    subtitulo: '8.1 Composición · 8.2 Propiedades · 8.3 Funciones biológicas',
+    titulo: '8. Agua',
+    subtitulo: '8. Agua — 8.1, 8.2 y 8.3',
     emoji: '💧',
     color: '#06b6d4',
     resumen:
