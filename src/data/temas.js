@@ -15,7 +15,7 @@ const temas = [
     numero: 1,
     unidad: UNIDAD,
     titulo: 'El método científico',
-    subtitulo: 'Observar, hipotetizar, experimentar y concluir',
+    subtitulo: '1. El método científico',
     emoji: '🔬',
     color: '#6366f1',
     resumen:
@@ -36,8 +36,8 @@ const temas = [
     id: 'microscopia',
     numero: 2,
     unidad: UNIDAD,
-    titulo: 'Microscopía óptica y electrónica',
-    subtitulo: 'Ampliar la visión del mundo vivo',
+    titulo: 'Microscopía',
+    subtitulo: '1.1 Microscopía óptica · 1.2 Microscopía electrónica',
     emoji: '🔭',
     color: '#8b5cf6',
     resumen:
@@ -59,7 +59,7 @@ const temas = [
     numero: 3,
     unidad: UNIDAD,
     titulo: 'Origen y evolución del universo',
-    subtitulo: 'Del Big Bang a las galaxias',
+    subtitulo: '3. Origen y evolución del universo',
     emoji: '🌌',
     color: '#1e3a8a',
     resumen:
@@ -81,7 +81,7 @@ const temas = [
     numero: 4,
     unidad: UNIDAD,
     titulo: 'Origen y evolución de la Tierra',
-    subtitulo: 'Un planeta que se enfría y se transforma',
+    subtitulo: '4. Origen y evolución de la Tierra',
     emoji: '🌍',
     color: '#f59e0b',
     resumen:
@@ -103,7 +103,7 @@ const temas = [
     numero: 5,
     unidad: UNIDAD,
     titulo: 'Teorías sobre el origen de la vida',
-    subtitulo: 'Creacionismo, abiogénesis y enfoque científico',
+    subtitulo: '5. Teorías sobre el origen de la vida',
     emoji: '📜',
     color: '#3b82f6',
     resumen:
@@ -124,8 +124,8 @@ const temas = [
     id: 'generacion-espontanea',
     numero: 6,
     unidad: UNIDAD,
-    titulo: 'Generación espontánea (Redi)',
-    subtitulo: 'El experimento que cambió la biología',
+    titulo: 'La generación espontánea',
+    subtitulo: '5.1 La generación espontánea',
     emoji: '🪰',
     color: '#ef4444',
     resumen:
@@ -147,7 +147,7 @@ const temas = [
     numero: 7,
     unidad: UNIDAD,
     titulo: 'Pasteur y los matraces de cuello de cisne',
-    subtitulo: 'La biogénesis queda demostrada',
+    subtitulo: '5.2 Pasteur y los matraces de cuello de cisne',
     emoji: '🧫',
     color: '#0ea5e9',
     resumen:
@@ -168,8 +168,8 @@ const temas = [
     id: 'evolucion-quimica',
     numero: 8,
     unidad: UNIDAD,
-    titulo: 'Evolución química (Oparin/Haldane)',
-    subtitulo: 'Del caldo primordial a las primeras moléculas vivas',
+    titulo: 'Teoría de la evolución química',
+    subtitulo: '5.3 Teoría de la evolución química',
     emoji: '⚗️',
     color: '#8b5cf6',
     resumen:
@@ -190,8 +190,8 @@ const temas = [
     id: 'otras-teorias',
     numero: 9,
     unidad: UNIDAD,
-    titulo: 'Otras teorías del origen de la vida',
-    subtitulo: 'Panspermia y origen extraterrestre',
+    titulo: 'Otras teorías sobre el origen de la vida',
+    subtitulo: '6. Otras teorías sobre el origen de la vida',
     emoji: '🚀',
     color: '#6366f1',
     resumen:
@@ -213,7 +213,7 @@ const temas = [
     numero: 10,
     unidad: UNIDAD,
     titulo: 'Bioelementos y biomoléculas',
-    subtitulo: 'Los elementos químicos de la materia viva',
+    subtitulo: '7. Bioelementos y biomoléculas',
     emoji: '⚛️',
     color: '#10b981',
     resumen:
@@ -234,8 +234,8 @@ const temas = [
     id: 'agua',
     numero: 11,
     unidad: UNIDAD,
-    titulo: 'Agua: composición y propiedades',
-    subtitulo: 'La biomolécula inorgánica más importante',
+    titulo: 'Agua',
+    subtitulo: '8.1 Composición · 8.2 Propiedades · 8.3 Funciones biológicas',
     emoji: '💧',
     color: '#06b6d4',
     resumen:
@@ -257,7 +257,7 @@ const temas = [
     numero: 12,
     unidad: UNIDAD,
     titulo: 'Sales minerales',
-    subtitulo: 'Funciones estructurales y reguladoras',
+    subtitulo: '9. Sales minerales',
     emoji: '🧂',
     color: '#a855f7',
     resumen:
@@ -279,7 +279,7 @@ const temas = [
     numero: 13,
     unidad: UNIDAD,
     titulo: 'Biomoléculas orgánicas',
-    subtitulo: 'Glúcidos, lípidos, proteínas y ácidos nucleicos',
+    subtitulo: '10. Biomoléculas orgánicas',
     emoji: '🧪',
     color: '#ec4899',
     resumen:

@@ -30,11 +30,20 @@ export default function PaginaLectura({ pagina, tema }) {
           <p key={i} className="pagina-lectura__parrafo">{p}</p>
         ))}
 
-        {pagina.destacado && (
+        {pagina.subtemas?.map((sub, i) => (
+          <section key={i} className="pagina-lectura__subtema">
+            <h2 className="pagina-lectura__subtema-titulo">{sub.titulo}</h2>
+            {sub.parrafos?.map((p, j) => (
+              <p key={j} className="pagina-lectura__parrafo">{p}</p>
+            ))}
+          </section>
+        ))}
+
+        {pagina.tipo === 'repaso' && pagina.destacado && (
           <aside className="pagina-lectura__destacado">{pagina.destacado}</aside>
         )}
 
-        {pagina.puntosClave?.length > 0 && (
+        {pagina.tipo === 'repaso' && pagina.puntosClave?.length > 0 && (
           <div className="pagina-lectura__puntos">
             <h3>📌 Puntos clave</h3>
             <ul>
