@@ -326,13 +326,13 @@ export const mediaPorTema = {
 
     imagen: {
 
-      url: wiki('Water_molecule_3D.svg', 800),
+      url: wiki('Water_drop_impact_on_a_water-surface_-_(1).jpg', 800),
 
-      alt: 'Estructura de la molécula de agua con puentes de hidrógeno',
+      alt: 'Gota de agua al impactar sobre una superficie de agua',
 
-      fuente: 'Wikimedia Commons — Water molecule (dominio público)',
+      fuente: 'Wikimedia Commons — Water drop impact (dominio público)',
 
-      paginaCommons: 'https://commons.wikimedia.org/wiki/File:Water_molecule_3D.svg',
+      paginaCommons: 'https://commons.wikimedia.org/wiki/File:Water_drop_impact_on_a_water-surface_-_(1).jpg',
 
     },
 
