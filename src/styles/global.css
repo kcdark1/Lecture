@@ -970,6 +970,16 @@ img {
 .resultado__emoji { font-size: 3rem; }
 .resultado__titulo { font-family: var(--fuente-titulo); font-size: 1.35rem; font-weight: 700; margin-bottom: 6px; }
 .resultado__sub { color: var(--gris); margin-bottom: 16px; }
+.resultado__nota {
+  font-size: 1.15rem;
+  margin: 12px 0 16px;
+  color: var(--verde-osc);
+}
+.resultado__nota strong {
+  font-family: var(--fuente-titulo);
+  font-size: 1.35rem;
+  color: var(--verde);
+}
 .resultado__palabra {
   font-family: var(--fuente-titulo);
   font-size: 1.6rem;

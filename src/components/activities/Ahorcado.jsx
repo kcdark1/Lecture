@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { normalizar } from '../../utils/texto.js'
 import { useReportarCompletado } from '../../utils/actividadCallback.js'
+import ResultadoNota from './ResultadoNota.jsx'
 
 const ALFABETO = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ'.split('')
 const MAX_ERRORES = 6
@@ -72,6 +73,7 @@ export default function Ahorcado({ actividad, onCompletar }) {
             {gano ? '🎉 ¡Muy bien! Adivinaste la palabra.' : '😔 ¡Casi! La palabra era:'}
           </p>
           {!gano && <p className="resultado__palabra">{palabra}</p>}
+          <ResultadoNota gano={gano} porcentaje={gano ? 100 : 0} />
           <button className="btn btn--accent" onClick={reiniciar}>
             🔄 Jugar de nuevo
           </button>

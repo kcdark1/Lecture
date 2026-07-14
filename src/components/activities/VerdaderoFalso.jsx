@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useReportarCompletado } from '../../utils/actividadCallback.js'
+import ResultadoNota from './ResultadoNota.jsx'
 
 export default function VerdaderoFalso({ actividad, onCompletar }) {
   const total = actividad.afirmaciones.length
@@ -72,6 +73,7 @@ export default function VerdaderoFalso({ actividad, onCompletar }) {
             Acertaste {aciertos} de {total}
             {aciertos === total ? ' 🎉 ¡Excelente!' : ' 💪 ¡Buen intento!'}
           </p>
+          <ResultadoNota aciertos={aciertos} total={total} />
           <button className="btn btn--accent" onClick={reiniciar}>🔄 Intentar de nuevo</button>
         </div>
       ) : (

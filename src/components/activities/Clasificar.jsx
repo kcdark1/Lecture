@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { useReportarCompletado } from '../../utils/actividadCallback.js'
+import ResultadoNota from './ResultadoNota.jsx'
 
 // Clasifica: cada elemento debe asignarse a su categoría correcta.
 export default function Clasificar({ actividad, onCompletar }) {
@@ -78,6 +79,7 @@ export default function Clasificar({ actividad, onCompletar }) {
             Acertaste {aciertos} de {items.length}
             {aciertos === items.length ? ' 🎉 ¡Perfecto!' : ' 💪 ¡Sigue practicando!'}
           </p>
+          <ResultadoNota aciertos={aciertos} total={items.length} />
           <button className="btn btn--accent" onClick={reiniciar}>🔄 Intentar de nuevo</button>
         </div>
       ) : (

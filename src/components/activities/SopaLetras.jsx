@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { normalizar } from '../../utils/texto.js'
 import { useReportarCompletado } from '../../utils/actividadCallback.js'
+import ResultadoNota from './ResultadoNota.jsx'
 
 // Sopa de letras: se genera una cuadrícula con las palabras
 // escondidas. El estudiante hace clic en la primera y la última
@@ -102,6 +103,7 @@ export default function SopaLetras({ actividad, onCompletar }) {
         <div className="resultado resultado--ok">
           <p className="resultado__emoji">🎉</p>
           <p className="resultado__titulo">¡Encontraste todas las palabras!</p>
+          <ResultadoNota aciertos={encontradas.length} total={colocadas.length} />
           <button className="btn btn--accent" onClick={reiniciar}>🔄 Nueva sopa</button>
         </div>
       ) : (

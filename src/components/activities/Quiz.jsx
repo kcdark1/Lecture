@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useReportarCompletado } from '../../utils/actividadCallback.js'
+import ResultadoNota from './ResultadoNota.jsx'
 
 export default function Quiz({ actividad, onCompletar }) {
   const total = actividad.preguntas.length
@@ -44,6 +45,7 @@ export default function Quiz({ actividad, onCompletar }) {
       <div className={`resultado ${perfecto ? 'resultado--ok' : 'resultado--fail'}`}>
         <p className="resultado__emoji">{perfecto ? '🏆' : aciertos >= total / 2 ? '👏' : '📚'}</p>
         <p className="resultado__titulo">Obtuviste {aciertos} de {total}</p>
+        <ResultadoNota aciertos={aciertos} total={total} />
         <p className="resultado__sub">
           {perfecto ? '¡Puntuación perfecta!' : aciertos >= total / 2 ? '¡Muy bien! Casi lo logras.' : '¡Repasa el capítulo y vuelve a intentarlo!'}
         </p>

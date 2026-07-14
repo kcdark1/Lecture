@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { useReportarCompletado } from '../../utils/actividadCallback.js'
+import ResultadoNota from './ResultadoNota.jsx'
 
 // Ordena la secuencia: se muestran los pasos desordenados y el
 // estudiante los sube o baja hasta dejarlos en el orden correcto.
@@ -64,6 +65,7 @@ export default function Secuencia({ actividad, onCompletar }) {
             {todoBien ? '🎉 ¡Orden perfecto!' : `Tienes ${aciertos} de ${orden.length} en su lugar`}
           </p>
           {!todoBien && <p className="resultado__sub">Revisa el capítulo y vuelve a intentarlo. 💪</p>}
+          <ResultadoNota aciertos={aciertos} total={orden.length} />
           <button className="btn btn--accent" onClick={reiniciar}>🔄 Intentar de nuevo</button>
         </div>
       ) : (

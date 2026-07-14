@@ -1,6 +1,6 @@
 // ============================================================
-//  CURSO — Unidad: Origen de la vida
-//  10 temas × 2 lecturas = 20 lecciones de lectura
+//  CURSO — Unidad: Origen de la vida (Don Bosco BGU)
+//  13 temas × 2 lecturas = 26 lecciones de lectura
 //  Por tema: lectura 1 → video → actividad 1 → lectura 2 → actividad 2
 // ============================================================
 

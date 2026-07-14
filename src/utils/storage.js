@@ -3,6 +3,8 @@
 //  Guarda usuarios, progreso, puntajes y registro docente.
 // ============================================================
 
+import { calcularNota10 } from './puntaje.js'
+
 const CLAVE = 'bioaventura_datos'
 const PASS_DOCENTE = 'Tesis123'
 
@@ -68,6 +70,7 @@ export function guardarPuntaje(actividadId, resultado) {
   if (!u) return
   u.puntajes[actividadId] = {
     ...resultado,
+    nota: calcularNota10(resultado),
     fecha: new Date().toISOString(),
   }
   guardar(datos)
@@ -111,6 +114,7 @@ export function generarReporteDocente() {
       cursoCompletado: u.cursoCompletado,
       fechaCompletado: u.fechaCompletado,
       pasosCompletados: Object.keys(u.pasosCompletados).length,
+      pasosDetalle: u.pasosCompletados,
       puntajes: u.puntajes,
     })),
   }

@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { sonIguales } from '../../utils/texto.js'
 import { useReportarCompletado } from '../../utils/actividadCallback.js'
+import ResultadoNota from './ResultadoNota.jsx'
 
 export default function Completar({ actividad, onCompletar }) {
   const banco = useMemo(() => mezclar(actividad.banco), [actividad.banco])
@@ -107,6 +108,7 @@ export default function Completar({ actividad, onCompletar }) {
             Acertaste {aciertos} de {actividad.frases.length}
             {aciertos === actividad.frases.length ? ' 🎉 ¡Perfecto!' : ' 💪 ¡Sigue intentando!'}
           </p>
+          <ResultadoNota aciertos={aciertos} total={actividad.frases.length} />
           <button className="btn btn--accent" onClick={reiniciar}>🔄 Intentar de nuevo</button>
         </div>
       ) : (

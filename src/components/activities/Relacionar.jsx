@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { useReportarCompletado } from '../../utils/actividadCallback.js'
+import ResultadoNota from './ResultadoNota.jsx'
 
 // Relaciona: dos columnas. El estudiante toca un término y luego su
 // definición para unirlos. Si acierta, la pareja queda fijada.
@@ -96,6 +97,7 @@ export default function Relacionar({ actividad, onCompletar }) {
           <p className="resultado__emoji">🎉</p>
           <p className="resultado__titulo">¡Uniste todas las parejas!</p>
           <p className="resultado__sub">Lo lograste en {intentos} intentos.</p>
+          <ResultadoNota porcentaje={100} />
           <button className="btn btn--accent" onClick={reiniciar}>🔄 Jugar de nuevo</button>
         </div>
       ) : (

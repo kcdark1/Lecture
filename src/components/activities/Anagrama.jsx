@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { sonIguales } from '../../utils/texto.js'
 import { useReportarCompletado } from '../../utils/actividadCallback.js'
+import ResultadoNota from './ResultadoNota.jsx'
 
 // Ordena la palabra (anagrama): las letras aparecen desordenadas y
 // el estudiante las va colocando en orden con ayuda de la pista.
@@ -63,6 +64,7 @@ export default function Anagrama({ actividad, onCompletar }) {
       <div className={`resultado ${perfecto ? 'resultado--ok' : 'resultado--fail'}`}>
         <p className="resultado__emoji">{perfecto ? '🏆' : '📚'}</p>
         <p className="resultado__titulo">Formaste {aciertos} de {total} palabras</p>
+        <ResultadoNota aciertos={aciertos} total={total} />
         <button className="btn btn--accent" onClick={reiniciar}>🔄 Volver a jugar</button>
       </div>
     )

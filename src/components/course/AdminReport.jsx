@@ -29,7 +29,7 @@ export default function AdminReport() {
         <div className="modal-overlay">
           <div className="modal-card modal-card--sm">
             <h2>📊 Reporte de estudiantes</h2>
-            <p>Ingresa la contraseña para descargar el reporte en PDF con nombres y puntajes.</p>
+            <p>Ingresa la contraseña para descargar un reporte detallado en PDF con avance y puntaje de cada actividad.</p>
             <form onSubmit={intentar} className="modal-form">
               <label>
                 Contraseña

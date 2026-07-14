@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { useReportarCompletado } from '../../utils/actividadCallback.js'
+import ResultadoNota from './ResultadoNota.jsx'
 
 // Memorama: se muestran cartas boca abajo. Al voltear dos, si
 // pertenecen a la misma pareja (término + descripción) se quedan
@@ -81,6 +82,7 @@ export default function Memoria({ actividad, onCompletar }) {
           <p className="resultado__emoji">🏆</p>
           <p className="resultado__titulo">¡Encontraste todas las parejas!</p>
           <p className="resultado__sub">Lo lograste en {intentos} intentos.</p>
+          <ResultadoNota porcentaje={100} />
           <button className="btn btn--accent" onClick={reiniciar}>🔄 Jugar de nuevo</button>
         </div>
       )}
