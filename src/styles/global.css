@@ -659,7 +659,13 @@ img {
   margin-bottom: 8px;
 }
 .pagina-lectura__titulo { font-size: clamp(1.5rem, 3vw, 2rem); color: var(--accent); }
-.pagina-lectura__img { margin-bottom: 22px; border-radius: 16px; overflow: hidden; }
+.pagina-lectura__img {
+  margin: 0 auto 22px;
+  border-radius: 16px;
+  overflow: hidden;
+  max-width: 420px;
+  width: 100%;
+}
 .pagina-lectura__subtema {
   margin-top: 28px;
   padding-top: 8px;
